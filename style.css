@@ -1,0 +1,313 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* header, nav */
+
+.header {
+    background: rgb(0, 0, 0);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    color: white;
+
+}
+
+.nav_center {
+    gap: 10px;
+}
+
+i {
+    font-size: 20px;
+    transition: 0.4s;
+
+}
+
+.nav .nav_center {
+    display: flex;
+    align-items: center;
+}
+
+.nav_center img {
+    width: 70px;
+    height: 70px;
+}
+
+.nav .nav_center span {
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+i:hover {
+    cursor: pointer;
+
+    color: #ab373c;
+}
+
+/* main container, left container and right container */
+.containers {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.left_container {
+    background-color: rgba(63, 49, 104, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-left: 50px;
+    width: 100%;
+    padding-bottom: 150px;
+}
+.left_container h1:first-child {
+    color: white;
+    font-weight: 900;
+    font-size: 90px;
+}
+
+.left_container span{
+    font-weight: 900;
+    font-size: 90px;
+    color:#b4343d;
+}
+
+.left_container h3 {
+    color: white;
+}
+
+button {
+    background-color: #ab373c;
+    color: white;
+    padding: 8px 20px;
+    margin-bottom: 5px;
+    text-align: center;
+    display: inline;
+    width: 20%;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #7a191b;
+    transition: 0.3s;
+}
+
+h3 {
+    line-height: 50px;
+}
+
+h1 {
+    
+}
+
+.ring {
+    border: solid 4px black;
+}
+
+
+
+.right_container {
+    width: 100%;
+    background-color:  rgba(63, 49, 104, 0.7);
+    z-index: -2;
+
+}
+
+
+.right_container .adidas {
+    position: absolute;
+    top: 380px;
+    left: 832px;
+    font-size: 150px;
+    color: rgba(180, 164, 164, 0.603);
+    font-weight: bold;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.right_container img {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    z-index: 2;
+
+}
+/* circle rings for animation */
+
+#cirlce-ring {
+    padding-left: 130px;
+    padding-top: 100px;
+}
+
+/* 1st circle */
+.right_container .ring {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(122, 120, 120, 0.5);
+}
+
+.right_container .ring:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: solid 3px transparent;
+    border-top: 3px solid #fff12e;
+    border-right: 3px solid #fff12e;
+    border-radius: 50%;
+    z-index: 1;
+    animation: returncircle 10s linear infinite;
+}
+
+
+
+.right_container .ring .circle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: transparent;
+    transform-origin: left;
+    animation: return 10s linear infinite;
+
+
+
+}
+
+
+.right_container .ring .circle:before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: -9px;
+    width: 16px;
+    height: 16px;
+    background: #fff12e;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #fff12e;
+}
+
+/*  1sst circle animation */
+@keyframes returncircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes return {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(405deg);
+    }
+
+    /* 2nd circle and ring */
+}
+
+.right_container .ring-two {
+    position: absolute;
+    top: 19%;
+    left: 54%;
+    width: 500px;
+    height: 500px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+}
+
+.right_container .ring-two:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-bottom: 3px solid #fff12e;
+    border-left: 3px solid #fff12e;
+    border-radius: 50%;
+    animation: returncircle2 10s linear infinite;
+}
+
+
+.right_container .ring-two .circle-two {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background-color: transparent;
+    transform-origin: left;
+    animation: return2 10s linear infinite;
+}
+
+.right_container .ring-two .circle-two:before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff12e;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(122, 120, 120, 0.5);
+}
+
+/* second circle animation */
+@keyframes returncircle2 {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(-405deg);
+    }
+}
+
+@keyframes return2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
